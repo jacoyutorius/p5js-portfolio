@@ -5,9 +5,9 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
 export default defineConfig(({ command }) => ({
   plugins: [
     vue(),
-    viteStaticCopy({
-      targets: [{ src: 'sketches', dest: '.' }],
-    }),
+    ...(command === 'build'
+      ? [viteStaticCopy({ targets: [{ src: 'sketches', dest: '.' }] })]
+      : []),
   ],
   base: command === 'build' ? '/p5js-portfolio/' : '/',
   test: {
