@@ -15,10 +15,12 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.2.2",
     "@vitejs/plugin-vue": "^5.0.0",
     "@vue/test-utils": "^2.4.0",
     "fast-check": "^3.19.0",
     "happy-dom": "^14.0.0",
+    "tailwindcss": "^4.2.2",
     "vite": "^5.0.0",
     "vite-plugin-static-copy": "^3.3.0",
     "vitest": "^1.6.0"

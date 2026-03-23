@@ -1,8 +1,13 @@
 <template>
-  <article class="sketch-card">
-    <router-link :to="`/sketch/${name}`" class="sketch-card__link">
-      <h2 class="sketch-card__title">{{ title }}</h2>
-      <p v-if="description" class="sketch-card__description">{{ description }}</p>
+  <article>
+    <router-link
+      :to="`/sketch/${name}`"
+      class="block bg-white rounded-2xl p-6 shadow-sm border border-gray-100
+             hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+    >
+      <h2 class="text-lg font-semibold text-gray-900 mb-1">{{ title }}</h2>
+      <p v-if="description" class="text-sm text-gray-500 leading-relaxed">{{ description }}</p>
+      <span class="inline-block mt-4 text-xs font-medium text-indigo-500">View sketch →</span>
     </router-link>
   </article>
 </template>
@@ -23,33 +28,3 @@ defineProps({
   },
 })
 </script>
-
-<style scoped>
-.sketch-card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.sketch-card__link {
-  display: block;
-  padding: 1rem;
-  text-decoration: none;
-  color: inherit;
-}
-
-.sketch-card__link:hover {
-  background-color: #f5f5f5;
-}
-
-.sketch-card__title {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-}
-
-.sketch-card__description {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #666;
-}
-</style>
