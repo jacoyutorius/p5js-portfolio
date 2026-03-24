@@ -72,13 +72,17 @@ function main() {
   // 5. Write files
   const sketchFilePath = join(sketchDir, 'sketch.js');
   const htmlFilePath = join(sketchDir, 'index.html');
+  const metaFilePath = join(sketchDir, 'meta.json');
+  const metaContent = JSON.stringify({ title: name, description: '' }, null, 2) + '\n';
 
   writeFileSync(sketchFilePath, sketchContent, 'utf8');
   writeFileSync(htmlFilePath, htmlContent, 'utf8');
+  writeFileSync(metaFilePath, metaContent, 'utf8');
 
   // 6. Output generated paths to stdout
   process.stdout.write(`sketches/${name}/sketch.js\n`);
   process.stdout.write(`sketches/${name}/index.html\n`);
+  process.stdout.write(`sketches/${name}/meta.json\n`);
 }
 
 main();
