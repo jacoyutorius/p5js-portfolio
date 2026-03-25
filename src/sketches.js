@@ -19,9 +19,10 @@ function parseEntry(name, raw) {
       name,
       title: raw.title,
       ...(typeof raw.description === 'string' ? { description: raw.description } : {}),
+      visible: raw.visible !== false,
     }
   }
-  return { name, title: name }
+  return { name, title: name, visible: true }
 }
 
 /**
@@ -54,5 +55,5 @@ export function getSketches() {
     }
 
     return parseEntry(name, raw)
-  })
+  }).filter((entry) => entry.visible !== false)
 }

@@ -73,7 +73,7 @@ function main() {
   const sketchFilePath = join(sketchDir, 'sketch.js');
   const htmlFilePath = join(sketchDir, 'index.html');
   const metaFilePath = join(sketchDir, 'meta.json');
-  const metaContent = JSON.stringify({ title: name, description: '' }, null, 2) + '\n';
+  const metaContent = JSON.stringify({ title: name, description: '', visible: true }, null, 2) + '\n';
 
   writeFileSync(sketchFilePath, sketchContent, 'utf8');
   writeFileSync(htmlFilePath, htmlContent, 'utf8');
